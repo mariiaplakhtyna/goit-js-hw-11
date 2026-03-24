@@ -6,7 +6,7 @@ const SimpleLightbox =
 
 const gallery = document.querySelector('.gallery');
 
-export const lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
@@ -14,7 +14,15 @@ export const lightbox = new SimpleLightbox('.gallery a', {
 export function createGallery(images) {
   const markup = images
     .map(
-      ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => {
         return `
           <li class="gallery-item">
             <a class="gallery-link" href="${largeImageURL}">
@@ -37,6 +45,9 @@ export function createGallery(images) {
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
+
+  // ❗ ВАЖЛИВО — це і була помилка
+  lightbox.refresh();
 }
 
 export function clearGallery() {

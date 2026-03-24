@@ -8,7 +8,6 @@ import {
   clearGallery,
   showLoader,
   hideLoader,
-  lightbox,
 } from './js/render-functions.js';
 
 const form = document.querySelector('.form');
@@ -36,7 +35,6 @@ form.addEventListener('submit', async event => {
     }
 
     createGallery(data.hits);
-    lightbox.refresh();
   } catch (error) {
     iziToast.show({
       message: 'Something went wrong. Please try again later.',
