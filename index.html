@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>goit-js-hw-11</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+  </head>
+
+  <body>
+    <form class="form">
+      <input
+        type="text"
+        name="search"
+        placeholder="Search images..."
+        autocomplete="off"
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="loader"></div>
+
+    <ul class="gallery"></ul>
+    <script>
+      var global = globalThis;
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
